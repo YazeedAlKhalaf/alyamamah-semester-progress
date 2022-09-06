@@ -49,7 +49,15 @@ func (c Calendar) GetEventsWithDate(date time.Time) ([]Event, error) {
 }
 
 func (c Calendar) GetFirstDay() (time.Time, error) {
-	firstDate, err := time.Parse(layout, c.Events[0].StartDate)
+	var chosenDate string
+	for _, event := range c.Events {
+		if event.Week == "1" {
+			chosenDate = event.StartDate
+			break
+		}
+	}
+
+	firstDate, err := time.Parse(layout, chosenDate)
 	if err != nil {
 		return time.Time{}, err
 	}
