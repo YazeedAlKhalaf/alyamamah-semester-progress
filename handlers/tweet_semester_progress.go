@@ -24,6 +24,10 @@ func TweetSemesterProgress(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	currentDay, err := calendar.GetCurrentDayInSemester()
+	if err != nil {
+		fmt.Println("something went wrong getting the current day in semester:", err)
+		return
+	}
 	totalDays, err := calendar.GetTotalDaysNumber()
 	if err != nil {
 		fmt.Println("something went wrong getting total days number:", err)
