@@ -1,4 +1,4 @@
-package cloudfunctions
+package handlers
 
 import (
 	"encoding/json"

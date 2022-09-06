@@ -4,6 +4,8 @@
 
 2. put the accesss tokens you got and the consumer keys in the `app.env` by copying the `app.env.example` file.
 
+> provide the environment variables in app.env.example to the docker container when you run it
+
 ## weeks
 
 1.  28 Aug - 3 Sep
