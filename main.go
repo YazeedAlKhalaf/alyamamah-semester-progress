@@ -12,7 +12,6 @@ import (
 func main() {
 	http.HandleFunc("/tweet-semester-progress", handlers.TweetSemesterProgress)
 
-	// get port from env
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
