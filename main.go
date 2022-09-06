@@ -17,7 +17,7 @@ func main() {
 		port = "8080"
 	}
 
-	fmt.Printf("starting server to listen on port: %s", port)
+	fmt.Printf("starting server to listen on port: %s\n", port)
 	err := http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 	if errors.Is(err, http.ErrServerClosed) {
 		fmt.Printf("server closed\n")
