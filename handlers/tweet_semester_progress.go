@@ -15,22 +15,26 @@ func TweetSemesterProgress(w http.ResponseWriter, r *http.Request) {
 	twitterClient, err := internal.CreateTwitterClient()
 	if err != nil {
 		fmt.Println("something went wrong creating the twitter client:", err)
+		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 
 	calendar, err := internal.NewCalendarFromLatestFile()
 	if err != nil {
 		fmt.Println("something went wrong reading latest calendar from file:", err)
+		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 	currentDay, err := calendar.GetCurrentDayInSemester()
 	if err != nil {
 		fmt.Println("something went wrong getting the current day in semester:", err)
+		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 	totalDays, err := calendar.GetTotalDaysNumber()
 	if err != nil {
 		fmt.Println("something went wrong getting total days number:", err)
+		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 
