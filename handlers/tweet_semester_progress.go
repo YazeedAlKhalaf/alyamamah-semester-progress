@@ -18,9 +18,9 @@ func TweetSemesterProgress(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	calendar, err := internal.NewCalendarFromFile("alyamamah-calendar.json")
+	calendar, err := internal.NewCalendarFromLatestFile()
 	if err != nil {
-		fmt.Println("something went wrong reading calendar from file:", err)
+		fmt.Println("something went wrong reading latest calendar from file:", err)
 		return
 	}
 	currentDay, err := calendar.GetCurrentDayInSemester()
