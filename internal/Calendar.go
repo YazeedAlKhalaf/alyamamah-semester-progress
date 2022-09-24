@@ -3,15 +3,21 @@ package internal
 import (
 	"encoding/json"
 	"fmt"
+	"io/fs"
+	"io/ioutil"
 	"os"
+	"regexp"
+	"strconv"
 	"time"
 )
 
 const (
-	layout string = "Jan 2, 2006"
+	layout       string = "Jan 2, 2006"
+	calendarsDir string = "./calendars"
 )
 
 type Calendar struct {
+	Title  string  `json:"title"`
 	Events []Event `json:"events"`
 }
 
@@ -111,7 +117,7 @@ func (c Calendar) GetCurrentDayInSemester() (int, error) {
 	return currentDay, nil
 }
 
-func NewCalendarFromFile(path string) (Calendar, error) {
+func newCalendarFromFile(path string) (Calendar, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return Calendar{}, nil
@@ -125,4 +131,36 @@ func NewCalendarFromFile(path string) (Calendar, error) {
 	}
 
 	return calendar, nil
+}
+
+func NewCalendarFromLatestFile() (Calendar, error) {
+	calendars, err := ioutil.ReadDir(calendarsDir)
+	if err != nil {
+		return Calendar{}, err
+	}
+
+	numRegExp := regexp.MustCompile(`\d+`)
+	var latestCalendar fs.FileInfo
+	maxNumber := -1
+	for _, calendar := range calendars {
+		if calendar.IsDir() {
+			continue
+		}
+
+		numString := string(numRegExp.Find([]byte(calendar.Name())))
+		num, err := strconv.Atoi(numString)
+		if err != nil {
+			continue
+		}
+
+		if num > maxNumber {
+			maxNumber = num
+			latestCalendar = calendar
+		}
+	}
+	if maxNumber == -1 {
+		return Calendar{}, fmt.Errorf("no calendars, please check the directory you provided.")
+	}
+
+	return newCalendarFromFile(fmt.Sprintf("%s/%s", calendarsDir, latestCalendar.Name()))
 }
