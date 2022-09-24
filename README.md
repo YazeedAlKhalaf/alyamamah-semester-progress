@@ -31,3 +31,11 @@
 21. 15 jan - 21 jan
 22. 22 jan - 28 jan
 23. 29 jan - 4 feb
+
+## Contributing
+
+You can contribute in multiple ways:
+
+- Reporting bugs in the issues tab.
+- Opening pull requets fixing those bugs.
+- Opening pull requests adding new semesters the `calendars/` folder.

@@ -12,6 +12,7 @@ import (
 func main() {
 	http.HandleFunc("/tweet-semester-progress", handlers.TweetSemesterProgress)
 	http.HandleFunc("/latest-calendar", handlers.LatestCalendar)
+	http.HandleFunc("/all-calendars", handlers.AllCalendars)
 
 	port := os.Getenv("PORT")
 	if port == "" {

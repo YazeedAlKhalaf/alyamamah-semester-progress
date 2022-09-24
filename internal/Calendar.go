@@ -164,3 +164,24 @@ func NewCalendarFromLatestFile() (Calendar, error) {
 
 	return newCalendarFromFile(fmt.Sprintf("%s/%s", calendarsDir, latestCalendar.Name()))
 }
+
+func GetAllCalendars() ([]Calendar, error) {
+	calendarsFile, err := ioutil.ReadDir(calendarsDir)
+	if err != nil {
+		return []Calendar{}, err
+	}
+
+	var calendars []Calendar
+	for _, calendarFile := range calendarsFile {
+		if calendarFile.IsDir() {
+			continue
+		}
+		calendar, err := newCalendarFromFile(fmt.Sprintf("%s/%s", calendarsDir, calendarFile.Name()))
+		if err != nil {
+			continue
+		}
+		calendars = append(calendars, calendar)
+	}
+
+	return calendars, nil
+}
