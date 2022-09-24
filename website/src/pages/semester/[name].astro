@@ -1,0 +1,116 @@
+---
+import CalendarEventCard from "../../components/CalendarEventCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import type { Calendar } from "../../models/Calendar";
+
+const semesterName = Astro.params.name;
+
+const allCalendarsUrl = `${import.meta.env.API}/all-calendars`;
+const allCalendarsResponse = await fetch(allCalendarsUrl);
+const allCalendars = (await allCalendarsResponse.json())
+  .calendars as Array<Calendar>;
+
+const calendar = allCalendars.find(
+  (calendar) => calendar.title === semesterName
+);
+if (!calendar) {
+  return Astro.redirect("/404");
+}
+
+const calendarTitle = calendar!.title;
+const calendarParts = calendarTitle.split(" ");
+const calendarSeason = calendarParts[0];
+const calendarSemesterWord = calendarParts[1];
+const calendarYear = calendarParts[2];
+---
+
+<Layout title={calendarTitle}>
+  <main>
+    <h1>
+      <span class="text-gradient">{calendarSeason}</span>
+      {calendarSemesterWord}
+      {calendarYear}
+    </h1>
+    <!-- TODO: get semester progress -->
+    <p class="instructions"><strong>Semester Progess:</strong> 29/130 days</p>
+    <ul role="list" class="link-card-grid">
+      {
+        calendar.events.map((event) => {
+          const dayParts = event.day.split("-");
+          const startDay = dayParts[0];
+          const endDay = dayParts.length > 1 ? dayParts[1] : "";
+
+          return (
+            <CalendarEventCard
+              title={event.name}
+              body={`${startDay} ${event.start_date} ${
+                endDay == "" ? "" : "-"
+              } ${endDay} ${event.end_date}`}
+              isHighlighted={false}
+            />
+          );
+        })
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  :root {
+    --astro-gradient: linear-gradient(0deg, #f8933e, #feb351);
+  }
+
+  h1 {
+    margin: 2rem 0;
+  }
+
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 60ch;
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--astro-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      background-position-y: 0%;
+    }
+    50% {
+      background-position-y: 80%;
+    }
+  }
+
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    background: #f8933e;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .instructions code {
+    font-size: 0.875em;
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
