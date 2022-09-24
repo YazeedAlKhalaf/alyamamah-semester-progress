@@ -15,7 +15,19 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
+
+    <footer>
+      <p>
+        Made with ❤️ by <a
+          href="https://twitter.com/YazeedAlKhalaf"
+          target="_blank">Yazeed AlKhalaf</a
+        >
+      </p>
+    </footer>
+
     <style>
       :root {
         --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -36,6 +48,13 @@ const { title } = Astro.props;
 
       body {
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .content {
+        flex: 1;
       }
     </style>
 
@@ -51,6 +70,22 @@ const { title } = Astro.props;
       code {
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
           DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+      }
+
+      footer {
+        margin-top: 2rem;
+        padding: 1rem;
+        text-align: center;
+        border-top: 1px solid var(--color-border);
+      }
+
+      footer > p > a {
+        text-decoration: none;
+        color: #f8933e;
+      }
+
+      footer > p > a:hover {
+        color: #feb351;
       }
     </style>
   </body>
