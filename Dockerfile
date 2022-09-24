@@ -7,7 +7,7 @@ FROM alpine:3.16
 WORKDIR /app
 COPY --from=builder /app/main /app/main
 COPY app.env.example app.env
-COPY alyamamah-calendar.json .
+COPY calendars/ ./calendars
 
 EXPOSE 8080
 CMD [ "/app/main" ]

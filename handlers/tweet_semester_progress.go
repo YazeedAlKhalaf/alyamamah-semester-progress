@@ -12,6 +12,26 @@ import (
 )
 
 func TweetSemesterProgress(w http.ResponseWriter, r *http.Request) {
+	authHeader := r.Header.Get("Authorization")
+	if authHeader == "" {
+		fmt.Println("someone tried to access the API without a token.")
+		w.WriteHeader(http.StatusForbidden)
+		return
+	}
+
+	strings.Split(authHeader, "Bearer ")
+	isAuthorized, err := internal.IsAuthorized(strings.Split(authHeader, "Bearer ")[1])
+	if err != nil {
+		fmt.Println("something went wrong running isAuthorized:", err)
+		w.WriteHeader(http.StatusForbidden)
+		return
+	}
+	if !isAuthorized {
+		fmt.Println("someone tried to access the API with a token maliciously:", authHeader)
+		w.WriteHeader(http.StatusForbidden)
+		return
+	}
+
 	twitterClient, err := internal.CreateTwitterClient()
 	if err != nil {
 		fmt.Println("something went wrong creating the twitter client:", err)
