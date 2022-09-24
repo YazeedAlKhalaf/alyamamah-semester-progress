@@ -21,7 +21,10 @@ const allCalendars = (await allCalendarsResponse.json())
     <ul role="list" class="link-card-grid">
       {
         allCalendars.map((calendar) => (
-          <Card href="#" title={`${calendar.title}`} />
+          <Card
+            href={`/semester/${calendar.title}`}
+            title={`${calendar.title}`}
+          />
         ))
       }
     </ul>
