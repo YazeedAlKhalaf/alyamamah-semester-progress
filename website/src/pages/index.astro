@@ -1,6 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import type { Calendar } from "../models/Calendar";
+
+const allCalendarsUrl = `${import.meta.env.API}/all-calendars`;
+const allCalendarsResponse = await fetch(allCalendarsUrl);
+const allCalendars = (await allCalendarsResponse.json())
+  .calendars as Array<Calendar>;
 ---
 
 <Layout title="Al Yamamah Semester Progress">
@@ -13,14 +19,11 @@ import Card from "../components/Card.astro";
       <strong>Tip:</strong> You are awesome!
     </p>
     <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Fall Semester (2022-2023)"
-      />
-      <Card
-        href="https://docs.astro.build/"
-        title="Spring Semester (2022-2023)"
-      />
+      {
+        allCalendars.map((calendar) => (
+          <Card href="#" title={`${calendar.title}`} />
+        ))
+      }
     </ul>
   </main>
 </Layout>
