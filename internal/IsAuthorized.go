@@ -43,7 +43,7 @@ func IsAuthorized(jwt string) (bool, error) {
 			fmt.Println("something went wrong parsing the token expiration time:", err)
 			return false, err
 		}
-		if exp < time.Now().Unix() {
+		if exp < time.Now().UTC().Unix() {
 			fmt.Println("the token is expired.")
 			return false, nil
 		}
@@ -56,7 +56,7 @@ func IsAuthorized(jwt string) (bool, error) {
 			fmt.Println("something went wrong parsing the token issued at time:", err)
 			return false, err
 		}
-		if time.Now().Unix()-iat > 5 {
+		if time.Now().UTC().Unix()-iat > 5 {
 			fmt.Println("the token is used maliciously after more than 5 seconds.")
 			return false, nil
 		}
