@@ -134,45 +134,48 @@ func newCalendarFromFile(path string) (Calendar, error) {
 }
 
 func NewCalendarFromLatestFile() (Calendar, error) {
-	calendars, err := ioutil.ReadDir(calendarsDir)
+	calendarFiles, err := ioutil.ReadDir(calendarsDir)
 	if err != nil {
 		return Calendar{}, err
 	}
 
-	numRegExp := regexp.MustCompile(`\d+`)
-	var latestCalendar fs.FileInfo
+	// This regular expression get the digits at the start of the line.
+	// For more info visit https://regex101.com and text the regular expression.
+	numRegExp := regexp.MustCompile(`^\d+`)
 	maxNumber := -1
-	for _, calendar := range calendars {
-		if calendar.IsDir() {
+	var calendarsMap map[int]fs.FileInfo
+	for _, calendarFile := range calendarFiles {
+		if calendarFile.IsDir() {
 			continue
 		}
 
-		numString := string(numRegExp.Find([]byte(calendar.Name())))
+		numString := string(numRegExp.Find([]byte(calendarFile.Name())))
 		num, err := strconv.Atoi(numString)
 		if err != nil {
 			continue
 		}
 
+		calendarsMap[num] = calendarFile
+
 		if num > maxNumber {
 			maxNumber = num
-			latestCalendar = calendar
 		}
 	}
 	if maxNumber == -1 {
 		return Calendar{}, fmt.Errorf("no calendars, please check the directory you provided.")
 	}
 
-	return newCalendarFromFile(fmt.Sprintf("%s/%s", calendarsDir, latestCalendar.Name()))
+	return newCalendarFromFile(fmt.Sprintf("%s/%s", calendarsDir, calendarsMap[maxNumber].Name()))
 }
 
 func GetAllCalendars() ([]Calendar, error) {
-	calendarsFile, err := ioutil.ReadDir(calendarsDir)
+	calendarFiles, err := ioutil.ReadDir(calendarsDir)
 	if err != nil {
 		return []Calendar{}, err
 	}
 
 	var calendars []Calendar
-	for _, calendarFile := range calendarsFile {
+	for _, calendarFile := range calendarFiles {
 		if calendarFile.IsDir() {
 			continue
 		}
