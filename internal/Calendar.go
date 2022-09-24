@@ -143,7 +143,7 @@ func NewCalendarFromLatestFile() (Calendar, error) {
 	// For more info visit https://regex101.com and text the regular expression.
 	numRegExp := regexp.MustCompile(`^\d+`)
 	maxNumber := -1
-	var calendarsMap map[int]fs.FileInfo
+	calendarsMap := map[int]fs.FileInfo{}
 	for _, calendarFile := range calendarFiles {
 		if calendarFile.IsDir() {
 			continue
@@ -174,7 +174,7 @@ func GetAllCalendars() ([]Calendar, error) {
 		return []Calendar{}, err
 	}
 
-	var calendars []Calendar
+	calendars := []Calendar{}
 	for _, calendarFile := range calendarFiles {
 		if calendarFile.IsDir() {
 			continue
