@@ -5,17 +5,25 @@ import type { Calendar } from "../../models/Calendar";
 
 const semesterName = Astro.params.name;
 
-const allCalendarsUrl = `${import.meta.env.API}/all-calendars`;
-const allCalendarsResponse = await fetch(allCalendarsUrl);
-const allCalendars = (await allCalendarsResponse.json())
-  .calendars as Array<Calendar>;
+interface CalendarByNameResponse {
+  calendar: Calendar;
+  currentDay: number;
+  totalDays: number;
+}
 
-const calendar = allCalendars.find(
-  (calendar) => calendar.title === semesterName
-);
-if (!calendar) {
+const allCalendarsUrl = `${
+  import.meta.env.API
+}/calendar-by-name?name=${semesterName}`;
+const calendarResponse = await fetch(allCalendarsUrl);
+if (calendarResponse.status !== 200) {
   return Astro.redirect("/404");
 }
+const calendarByNameResponse =
+  (await calendarResponse.json()) as CalendarByNameResponse;
+
+const calendar = calendarByNameResponse.calendar;
+const currentDay = calendarByNameResponse.currentDay;
+const totalDays = calendarByNameResponse.totalDays;
 
 const calendarTitle = calendar!.title;
 const calendarParts = calendarTitle.split(" ");
@@ -31,8 +39,10 @@ const calendarYear = calendarParts[2];
       {calendarSemesterWord}
       {calendarYear}
     </h1>
-    <!-- TODO: get semester progress -->
-    <p class="instructions"><strong>Semester Progess:</strong> 29/130 days</p>
+    <p class="instructions">
+      <strong>Semester Progess:</strong>
+      {`${currentDay}/${totalDays}`} days
+    </p>
     <ul role="list" class="link-card-grid">
       {
         calendar.events.map((event) => {
