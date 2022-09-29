@@ -73,8 +73,6 @@ func (c Calendar) GetFirstDay() (time.Time, error) {
 }
 
 func (c Calendar) GetLastDay() (time.Time, error) {
-	fmt.Println("events length:", len(c.Events))
-	fmt.Println("events:", c.Events)
 	lastDate, err := time.Parse(layout, c.Events[len(c.Events)-2].StartDate)
 	if err != nil {
 		return time.Time{}, err
