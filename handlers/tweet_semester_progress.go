@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"net/http"
 	"strings"
 	"time"
@@ -45,18 +46,22 @@ func TweetSemesterProgress(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+
 	currentDay, err := calendar.GetCurrentDayInSemester()
 	if err != nil {
 		fmt.Println("something went wrong getting the current day in semester:", err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+
 	totalDays, err := calendar.GetTotalDaysNumber()
 	if err != nil {
 		fmt.Println("something went wrong getting total days number:", err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+
+	currentWeek := math.Ceil(float64(currentDay) / 7)
 
 	progressBar := internal.CreateProgressBar(float32(currentDay), float32(totalDays), 15)
 
@@ -65,6 +70,8 @@ func TweetSemesterProgress(w http.ResponseWriter, r *http.Request) {
 		fmt.Sprintln(""),
 		fmt.Sprintln(""),
 		fmt.Sprintf("🗓️ %d/%d days passed", currentDay, totalDays),
+		fmt.Sprintln(""),
+		fmt.Sprintf("Current Week %d", int(currentWeek)),
 		fmt.Sprintln(""),
 		fmt.Sprintln(""),
 		`#alyamamah`,
