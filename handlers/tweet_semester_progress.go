@@ -61,6 +61,12 @@ func TweetSemesterProgress(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if currentDay < 1 {
+		fmt.Println("current day is less than 1")
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
 	if currentDay > totalDays {
 		fmt.Println("current day is greater than total days")
 		w.WriteHeader(http.StatusInternalServerError)
