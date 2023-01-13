@@ -61,6 +61,12 @@ func TweetSemesterProgress(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if currentDay > totalDays {
+		fmt.Println("current day is greater than total days")
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
 	currentWeek := math.Ceil(float64(currentDay) / 7)
 
 	progressBar := internal.CreateProgressBar(float32(currentDay), float32(totalDays), 15)
