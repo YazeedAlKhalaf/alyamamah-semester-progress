@@ -1,0 +1,187 @@
+{
+  "title": "Spring Semester (2022-2023)",
+  "events": [
+    {
+      "name": "Pre-Registration",
+      "day": "Sunday-Saturday",
+      "start_date": "Jan 1, 2023",
+      "end_date": "Jan 14, 2023",
+      "week": ""
+    },
+    {
+      "name": "First day of Spring Academic classes (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Jan 15, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "First day of INTERLINK classes (Term 1, semester 2) (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Jan 15, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Course Registration. (Without late fees)",
+      "day": "Sunday-Saturday",
+      "start_date": "Jan 15, 2023",
+      "end_date": "Jan 21, 2023",
+      "week": ""
+    },
+    {
+      "name": "(Add and Delete) modifying schedules. (Without late fees)",
+      "day": "Sunday-Saturday",
+      "start_date": "Jan 15, 2023",
+      "end_date": "Jan 21, 2023",
+      "week": ""
+    },
+    {
+      "name": "Course Registration. (With late fees)",
+      "day": "Sunday-Thursday",
+      "start_date": "Jan 22, 2023",
+      "end_date": "Jan 26, 2023",
+      "week": ""
+    },
+    {
+      "name": "(Add and Delete) modifying schedules. (Without late fees)",
+      "day": "Sunday-Thursday",
+      "start_date": "Jan 22, 2023",
+      "end_date": "Jan 26, 2023",
+      "week": ""
+    },
+    {
+      "name": "Specialization and Change Major",
+      "day": "Sunday-Thursday",
+      "start_date": "Jan 1, 2022",
+      "end_date": "Jan 26, 2022",
+      "week": ""
+    },
+    {
+      "name": "Foundation day Holiday (2 Days)",
+      "day": "Wednesday-Thursday",
+      "start_date": "Feb 22, 2022",
+      "end_date": "Feb 23, 2022",
+      "week": ""
+    },
+    {
+      "name": "Mid Second Semester Break begins by the end of Thursday",
+      "day": "Thursday-Saturday",
+      "start_date": "Mar 2, 2022",
+      "end_date": "Mar 11, 2022",
+      "week": ""
+    },
+    {
+      "name": "Classes resume after Mid Second Semester Break",
+      "day": "Sunday",
+      "start_date": "Mar 12, 2022",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Last day of INTERLINK classes (Term 1, semester 2)",
+      "day": "Thursday",
+      "start_date": "Mar 16, 2022",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Registration for INTERLINK classes (Term 2, semester 2)",
+      "day": "Friday-Tuesday",
+      "start_date": "Mar 17, 2022",
+      "end_date": "Mar 21, 2022",
+      "week": ""
+    },
+    {
+      "name": "First day of INTERLINK classes (Term 2, semester2) (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Mar 19, 2022",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Eid AlFiter Break by the end of Thursday",
+      "day": "Thursday-Tuesday",
+      "start_date": "Apr 13, 2022",
+      "end_date": "Apr 25, 2022",
+      "week": ""
+    },
+    {
+      "name": "Classes resume After Eid AlFiter Break",
+      "day": "Wednesday",
+      "start_date": "Apr 26, 2022",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Drop Courses (with Grade W)",
+      "day": "Sunday-Sunday",
+      "start_date": "Jan 29, 2022",
+      "end_date": "May 7, 2022",
+      "week": ""
+    },
+    {
+      "name": "Withdrawal Semester (Apology). (If the student registered courses)",
+      "day": "Sunday-Sunday",
+      "start_date": "Jan 29, 2022",
+      "end_date": "May 7, 2022",
+      "week": ""
+    },
+    {
+      "name": "Postpone semester. (If the student did not register courses)",
+      "day": "Sunday-Sunday",
+      "start_date": "Jan 1, 2022",
+      "end_date": "May 7, 2022",
+      "week": ""
+    },
+    {
+      "name": "Deadline for DN removal requests",
+      "day": "Sunday",
+      "start_date": "May 7, 2022",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "End of Spring Academic classes",
+      "day": "Thursday",
+      "start_date": "May 18, 2022",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Final Exams (For General courses) (4 Days)",
+      "day": "Sunday-Wednesday",
+      "start_date": "May 21, 2022",
+      "end_date": "May 24, 2022",
+      "week": ""
+    },
+    {
+      "name": "Last day of INTERLINK classes (Term 2, semester 2)",
+      "day": "Tuesday",
+      "start_date": "May 23, 2022",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Final Exams (For Academic courses) (13 Days)",
+      "day": "Thursday-Thursday",
+      "start_date": "May 25, 2022",
+      "end_date": "June 8, 2022",
+      "week": ""
+    },
+    {
+      "name": "Deadline for submitting grades",
+      "day": "Thursday",
+      "start_date": "June 8, 2022",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "End-Year Break begins by the end of Thursday",
+      "day": "Thursday",
+      "start_date": "June 8, 2022",
+      "end_date": null,
+      "week": ""
+    }
+  ]
+}
