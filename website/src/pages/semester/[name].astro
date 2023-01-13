@@ -6,9 +6,11 @@ import type { Calendar } from "../../models/Calendar";
 const semesterName = Astro.params.name;
 
 interface CalendarByNameResponse {
-  calendar: Calendar;
   currentDay: number;
   totalDays: number;
+  currentWeek: number;
+  totalWeeks: number;
+  calendar: Calendar;
 }
 
 const allCalendarsUrl = `${
@@ -21,9 +23,11 @@ if (calendarResponse.status !== 200) {
 const calendarByNameResponse =
   (await calendarResponse.json()) as CalendarByNameResponse;
 
-const calendar = calendarByNameResponse.calendar;
-const currentDay = calendarByNameResponse.currentDay;
-const totalDays = calendarByNameResponse.totalDays;
+  const currentDay = calendarByNameResponse.currentDay;
+  const totalDays = calendarByNameResponse.totalDays;
+  const currentWeek = calendarByNameResponse.currentWeek;
+  const totalWeeks = calendarByNameResponse.totalWeeks;
+  const calendar = calendarByNameResponse.calendar;
 
 const calendarTitle = calendar!.title;
 const calendarParts = calendarTitle.split(" ");
@@ -40,8 +44,11 @@ const calendarYear = calendarParts[2];
       {calendarYear}
     </h1>
     <p class="instructions">
-      <strong>Semester Progess:</strong>
+      <strong>Semester Progress:</strong>
       {`${currentDay}/${totalDays}`} days
+      <br />
+      <strong>Week Progress:</strong>
+      {`${currentWeek}/${totalWeeks}`} weeks
     </p>
     <ul role="list" class="link-card-grid">
       {
