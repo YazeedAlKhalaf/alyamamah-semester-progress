@@ -2,19 +2,22 @@
 export interface Props {
   title: string;
   href: string;
+  isCurrent: boolean;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, isCurrent } = Astro.props;
 ---
 
-<li class="link-card">
+<li class={isCurrent ? 'link-card current' : 'link-card'}>
   <a href={href}>
     <h2>
       {title}
       <span>&rarr;</span>
     </h2>
   </a>
+  {isCurrent && (<div class="current-banner">Current</div>)}
 </li>
+
 <style>
   :root {
     --link-gradient: linear-gradient(
@@ -73,5 +76,29 @@ const { href, title, body } = Astro.props;
   .link-card:is(:hover, :focus-within) h2 span {
     will-change: transform;
     transform: translateX(2px);
+  }
+
+  .current-banner {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.15rem;
+    background-color: #f8933e;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem 0 0 0.25rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+
+  .link-card {
+    list-style: none;
+    display: flex;
+    padding: 0.15rem;
+    background-image: var(--link-gradient);
+    background-size: 400%;
+    border-radius: 0.5rem;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
   }
 </style>

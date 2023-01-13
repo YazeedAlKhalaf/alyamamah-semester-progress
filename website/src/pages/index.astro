@@ -24,6 +24,7 @@ const allCalendars = (await allCalendarsResponse.json())
           <Card
             href={`/semester/${calendar.title}`}
             title={`${calendar.title}`}
+            isCurrent={calendar.isCurrent}
           />
         ))
       }
