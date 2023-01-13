@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/fs"
 	"io/ioutil"
+	"math"
 	"os"
 	"regexp"
 	"strconv"
@@ -56,13 +57,11 @@ func (c Calendar) GetEventsWithDate(date time.Time) ([]Event, error) {
 }
 
 func (c Calendar) GetFirstDay() (time.Time, error) {
-	var chosenDate string
-	for _, event := range c.Events {
-		if event.Week == "1" {
-			chosenDate = event.StartDate
-			break
-		}
+	if len(c.Events) < 0 {
+		return time.Time{}, fmt.Errorf("no events in the calendar")
 	}
+
+	chosenDate := c.Events[1].StartDate
 
 	firstDate, err := time.Parse(layout, chosenDate)
 	if err != nil {
@@ -73,7 +72,7 @@ func (c Calendar) GetFirstDay() (time.Time, error) {
 }
 
 func (c Calendar) GetLastDay() (time.Time, error) {
-	lastDate, err := time.Parse(layout, c.Events[len(c.Events)-2].StartDate)
+	lastDate, err := time.Parse(layout, c.Events[len(c.Events)-1].StartDate)
 	if err != nil {
 		return time.Time{}, err
 	}
@@ -92,7 +91,9 @@ func (c Calendar) GetTotalDaysNumber() (int, error) {
 		return -1, err
 	}
 
-	return int(lastDate.Sub(firstDate) / (24 * time.Hour)), nil
+	dateDiff := int(lastDate.Sub(firstDate) / (24 * time.Hour))
+	dateDiff = int(math.Abs(float64(dateDiff)))
+	return dateDiff, nil
 }
 
 func (c Calendar) GetCurrentDayInSemester() (int, error) {
@@ -106,10 +107,18 @@ func (c Calendar) GetCurrentDayInSemester() (int, error) {
 		return -1, err
 	}
 
-	currentDay := semesterDays - int(lastDate.Sub(time.Now())/(24*time.Hour))
+	nowLastDiff := int(lastDate.Sub(time.Now()) / (24 * time.Hour))
+	nowLastDiff = int(math.Abs(float64(nowLastDiff)))
 
-	if currentDay <= 0 && currentDay >= semesterDays {
-		return -1, nil
+	currentDay := semesterDays - nowLastDiff
+
+	firstDate, err := c.GetFirstDay()
+	if err != nil {
+		return -1, err
+	}
+
+	if firstDate.After(time.Now()) {
+		currentDay *= -1
 	}
 
 	return currentDay, nil
