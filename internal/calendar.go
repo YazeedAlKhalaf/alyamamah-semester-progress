@@ -18,8 +18,9 @@ const (
 )
 
 type Calendar struct {
-	Title  string  `json:"title"`
-	Events []Event `json:"events"`
+	Title     string  `json:"title"`
+	Events    []Event `json:"events"`
+	IsCurrent bool    `json:"isCurrent"`
 }
 
 func (c Calendar) GetEventsWithDate(date time.Time) ([]Event, error) {
@@ -135,18 +136,44 @@ func (c Calendar) GetCurrentDayInSemester() (int, error) {
 	return doneDays, nil
 }
 
+func (c Calendar) IsCurrentDayInSemester() (bool, error) {
+	firstDate, err := c.GetFirstDay()
+	if err != nil {
+		return false, err
+	}
+
+	lastDate, err := c.GetLastDay()
+	if err != nil {
+		return false, err
+	}
+
+	now := time.Now()
+	if now.After(firstDate) && now.Before(lastDate) {
+		return true, nil
+	}
+
+	return false, nil
+}
+
 func newCalendarFromFile(path string) (Calendar, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
-		return Calendar{}, nil
+		return Calendar{}, err
 	}
 
 	var calendar Calendar
 
 	err = json.Unmarshal(data, &calendar)
 	if err != nil {
-		return Calendar{}, nil
+		return Calendar{}, err
 	}
+
+	isCurrent, err := calendar.IsCurrentDayInSemester()
+	if err != nil {
+		return Calendar{}, err
+	}
+
+	calendar.IsCurrent = isCurrent
 
 	return calendar, nil
 }
