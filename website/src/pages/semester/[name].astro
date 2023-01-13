@@ -23,11 +23,11 @@ if (calendarResponse.status !== 200) {
 const calendarByNameResponse =
   (await calendarResponse.json()) as CalendarByNameResponse;
 
-  const currentDay = calendarByNameResponse.currentDay;
-  const totalDays = calendarByNameResponse.totalDays;
-  const currentWeek = calendarByNameResponse.currentWeek;
-  const totalWeeks = calendarByNameResponse.totalWeeks;
-  const calendar = calendarByNameResponse.calendar;
+const currentDay = calendarByNameResponse.currentDay;
+const totalDays = calendarByNameResponse.totalDays;
+const currentWeek = calendarByNameResponse.currentWeek;
+const totalWeeks = calendarByNameResponse.totalWeeks;
+const calendar = calendarByNameResponse.calendar;
 
 const calendarTitle = calendar!.title;
 const calendarParts = calendarTitle.split(" ");
