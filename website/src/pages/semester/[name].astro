@@ -1,18 +1,11 @@
 ---
-import CalendarEventCard from "../../components/CalendarEventCard.astro";
 import CalendarEventsListWithSearch from "../../components/CalendarEventsListWithSearch.svelte";
 import Layout from "../../layouts/Layout.astro";
-import type { Calendar } from "../../models/Calendar";
+import type { CalendarByNameResponse } from "../../models/CalendarByNameResponse";
 
 const semesterName = Astro.params.name;
 
-interface CalendarByNameResponse {
-  currentDay: number;
-  totalDays: number;
-  currentWeek: number;
-  totalWeeks: number;
-  calendar: Calendar;
-}
+
 
 const allCalendarsUrl = `${
   import.meta.env.API
