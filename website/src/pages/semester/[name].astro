@@ -39,6 +39,26 @@ const calendarYear = calendarParts[2];
 
 <Layout title={calendarTitle}>
   <main>
+    <div class="sticky top-bar">
+      <a href="/" class="back-link">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="back-button"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+        <span class="back-text">Back to home</span>
+      </a>
+    </div>
+
     <h1>
       <span class="text-gradient">{calendarSeason}</span>
       {calendarSemesterWord}
@@ -106,4 +126,44 @@ const calendarYear = calendarParts[2];
     border-radius: 4px;
     padding: 0.15em 0.25em;
   }
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+
+    background-color: #F5F0F0;
+    height: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .back-link {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .back-link:link,
+  .back-link:visited,
+  .back-link:hover,
+  .back-link:active {
+    color: black;
+  }
+
+  .back-button {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .back-text {
+    font-size: 0.875em;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
 </style>
