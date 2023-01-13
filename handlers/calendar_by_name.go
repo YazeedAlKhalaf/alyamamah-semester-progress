@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"net/http"
 
 	"github.com/yazeedalkhalaf/alyamamah-sp/internal"
@@ -42,11 +43,16 @@ func CalendarByName(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	currentWeek := int(math.Ceil(float64(currentDay) / 7))
+	totalWeeks := int(math.Ceil(float64(totalDays) / 7))
+
 	w.WriteHeader(http.StatusOK)
 	err = json.NewEncoder(w).Encode(map[string]any{
-		"currentDay": currentDay,
-		"totalDays":  totalDays,
-		"calendar":   calendar,
+		"currentDay":  currentDay,
+		"totalDays":   totalDays,
+		"currentWeek": currentWeek,
+		"totalWeeks":  totalWeeks,
+		"calendar":    calendar,
 	})
 	if err != nil {
 		fmt.Println("something went wrong encoding the calendars:", err)
