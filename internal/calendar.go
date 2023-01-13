@@ -97,7 +97,7 @@ func (c Calendar) GetTotalDaysNumber() (int, error) {
 }
 
 func (c Calendar) GetCurrentDayInSemester() (int, error) {
-	lastDate, err := c.GetLastDay()
+	firstDate, err := c.GetFirstDay()
 	if err != nil {
 		return -1, err
 	}
@@ -107,21 +107,32 @@ func (c Calendar) GetCurrentDayInSemester() (int, error) {
 		return -1, err
 	}
 
-	nowLastDiff := int(lastDate.Sub(time.Now()) / (24 * time.Hour))
-	nowLastDiff = int(math.Abs(float64(nowLastDiff)))
+	doneDuration := time.Now().Sub(firstDate)
+	doneDays := int(math.Ceil(doneDuration.Hours() / 24))
 
-	currentDay := semesterDays - nowLastDiff
-
-	firstDate, err := c.GetFirstDay()
-	if err != nil {
-		return -1, err
+	// If the done days is negative, it means that the semester has not started yet.
+	// --- now --- firstDate --- lastDate ---
+	// ---  13  ---    15    ---    25    ---
+	// If this drawing increases from left to right, then the semester has not started yet.
+	// If now = 13 and firstDate = 15, then doneDays = -2, but since the math.Ceil function rounds up, it will be -1
+	// even if the doneDays is -1.5, that is because it always goes up.
+	// But in our case, want to know the remaining days in negative numbers, so we subtract 1 from the doneDays.
+	// We can use math.Floor with a check on doneDuration, but I think this is more readable.
+	if doneDays < 0 {
+		doneDays -= 1
 	}
 
-	if firstDate.After(time.Now()) {
-		currentDay *= -1
+	// If the done days is greater than the semester days, it means that the semester has ended.
+	// --- firstDate --- lastDate --- now ---
+	// ---     15    ---    25    ---  29 ---
+	// If this drawing increases from left to right, then the semester has ended.
+	// If now = 29 and firstDate = 15, then doneDays = 14, we check if the doneDays is more than the semesterDays.
+	// Since semesterDays in this example is lastDate - firstDate = 10, we set the doneDays to 10.
+	if doneDays > semesterDays {
+		doneDays = semesterDays
 	}
 
-	return currentDay, nil
+	return doneDays, nil
 }
 
 func newCalendarFromFile(path string) (Calendar, error) {
