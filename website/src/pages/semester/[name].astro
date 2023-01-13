@@ -1,5 +1,6 @@
 ---
 import CalendarEventCard from "../../components/CalendarEventCard.astro";
+import CalendarEventsListWithSearch from "../../components/CalendarEventsListWithSearch.svelte";
 import Layout from "../../layouts/Layout.astro";
 import type { Calendar } from "../../models/Calendar";
 
@@ -50,25 +51,7 @@ const calendarYear = calendarParts[2];
       <strong>Week Progress:</strong>
       {`${currentWeek}/${totalWeeks}`} weeks
     </p>
-    <ul role="list" class="link-card-grid">
-      {
-        calendar.events.map((event) => {
-          const dayParts = event.day.split("-");
-          const startDay = dayParts[0];
-          const endDay = dayParts.length > 1 ? dayParts[1] : "";
-
-          return (
-            <CalendarEventCard
-              title={event.name}
-              body={`${startDay} ${event.start_date} ${
-                endDay == "" ? "" : "-"
-              } ${endDay} ${event.end_date}`}
-              isHighlighted={false}
-            />
-          );
-        })
-      }
-    </ul>
+    <CalendarEventsListWithSearch client:load events={calendar.events} />
   </main>
 </Layout>
 
@@ -122,12 +105,5 @@ const calendarYear = calendarParts[2];
     border: 0.1em solid var(--color-border);
     border-radius: 4px;
     padding: 0.15em 0.25em;
-  }
-
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
   }
 </style>
