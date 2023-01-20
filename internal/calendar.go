@@ -92,7 +92,7 @@ func (c Calendar) GetTotalDaysNumber() (int, error) {
 		return -1, err
 	}
 
-	dateDiff := int(lastDate.Sub(firstDate) / (24 * time.Hour))
+	dateDiff := int(lastDate.Sub(firstDate).Hours() / 24)
 	dateDiff = int(math.Abs(float64(dateDiff)))
 	return dateDiff, nil
 }
