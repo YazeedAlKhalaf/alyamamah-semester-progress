@@ -5,8 +5,6 @@ import type { CalendarByNameResponse } from "../../models/CalendarByNameResponse
 
 const semesterName = Astro.params.name;
 
-
-
 const allCalendarsUrl = `${
   import.meta.env.API
 }/calendar-by-name?name=${semesterName}`;
@@ -45,8 +43,7 @@ const calendarYear = calendarParts[2];
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-          />
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
         <span class="back-text">Back to home</span>
       </a>
@@ -124,14 +121,14 @@ const calendarYear = calendarParts[2];
     display: flex;
     align-items: center;
 
-    background-color: #F5F0F0;
+    background-color: #f5f0f0;
     height: 3rem;
     margin-bottom: 1rem;
   }
 
   .back-link {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     text-decoration: none;
   }
@@ -155,8 +152,8 @@ const calendarYear = calendarParts[2];
   }
 
   .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
 </style>
