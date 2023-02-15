@@ -8,14 +8,14 @@ export interface Props {
 const { href, title, isCurrent } = Astro.props;
 ---
 
-<li class={isCurrent ? 'link-card current' : 'link-card'}>
+<li class={isCurrent ? "link-card current" : "link-card"}>
   <a href={href}>
     <h2>
       {title}
       <span>&rarr;</span>
     </h2>
   </a>
-  {isCurrent && (<div class="current-banner">Current</div>)}
+  {isCurrent && <div class="current-banner">Current</div>}
 </li>
 
 <style>
@@ -83,7 +83,6 @@ const { href, title, isCurrent } = Astro.props;
     top: 0.75rem;
     right: 0.15rem;
     background-color: #f8933e;
-    color: white;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem 0 0 0.25rem;
     font-size: 0.75rem;
