@@ -15,6 +15,20 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+
+    <script
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-0673NY4JV0"
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-0673NY4JV0");
+    </script>
   </head>
   <body>
     <div class="content">

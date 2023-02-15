@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import netlify from "@astrojs/netlify/functions";
-
 import svelte from "@astrojs/svelte";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,8 +9,15 @@ export default defineConfig({
   adapter: netlify(),
   vite: {
     ssr: {
-      external: ["svgo"]
-    }
+      external: ["svgo"],
+    },
   },
-  integrations: [svelte()]
+  integrations: [
+    svelte(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
 });
