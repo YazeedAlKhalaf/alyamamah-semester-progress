@@ -20,13 +20,15 @@ const allCalendars = (await allCalendarsResponse.json())
     </p>
     <ul role="list" class="link-card-grid">
       {
-        allCalendars.reverse().map((calendar) => (
-          <Card
-            href={`/semester/${calendar.title}`}
-            title={`${calendar.title}`}
-            isCurrent={calendar.isCurrent}
-          />
-        ))
+        allCalendars
+          .reverse()
+          .map((calendar) => (
+            <Card
+              href={`/semester/${calendar.title}`}
+              title={`${calendar.title}`}
+              isCurrent={calendar.isCurrent}
+            />
+          ))
       }
     </ul>
   </main>
