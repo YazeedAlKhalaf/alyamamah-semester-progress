@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import netlify from "@astrojs/netlify/functions";
 import svelte from "@astrojs/svelte";
 import partytown from "@astrojs/partytown";
+import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,5 +20,6 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
+    compress(),
   ],
 });
