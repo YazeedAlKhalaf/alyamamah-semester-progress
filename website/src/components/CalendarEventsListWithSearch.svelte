@@ -14,7 +14,8 @@
       event.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       event.day.toLowerCase().includes(searchTerm.toLowerCase()) ||
       event.start_date.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      event.end_date.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (event.end_date &&
+        event.end_date.toLowerCase().includes(searchTerm.toLowerCase())) ||
       event.week.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -73,7 +74,9 @@
         title={event.name}
         body={`${getStartDay(event.day)} ${event.start_date} ${
           getEndDay(event.day) == "" ? "" : "-"
-        } ${getEndDay(event.day)} ${event.end_date}`}
+        } ${getEndDay(event.day)} ${
+          event.end_date != null ? event.end_date : ""
+        }`}
         isHighlighted={false}
       />
     {/each}
