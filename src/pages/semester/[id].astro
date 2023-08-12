@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 
 const semesterId = Astro.params.id;
 
-const calendars = await getCollection("calendars2");
+const calendars = await getCollection("calendars");
 const calendarByName = calendars.find((entry) => entry.id === semesterId);
 if (calendarByName === undefined) {
   return Astro.redirect("/404");
