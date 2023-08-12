@@ -2,6 +2,11 @@
 import CalendarEventsListWithSearch from "../../components/CalendarEventsListWithSearch.svelte";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { currentDayFromSemester } from "../../models/Calendar";
+import { Calendar } from "../../models/Calendar";
+import { totalDaysOfSemester } from "../../models/Calendar";
+import { totalWeeksOfSemester } from "../../models/Calendar";
+import { currentWeekOfSemester } from "../../models/Calendar";
 
 const semesterId = Astro.params.id;
 
@@ -11,17 +16,14 @@ if (calendarByName === undefined) {
   return Astro.redirect("/404");
 }
 
-// const currentDay = calendarByNameResponse.currentDay;
-// const totalDays = calendarByNameResponse.totalDays;
-// const currentWeek = calendarByNameResponse.currentWeek;
-// const totalWeeks = calendarByNameResponse.totalWeeks;
-const currentDay = "calendarByNameResponse.currentDay";
-const totalDays = "calendarByNameResponse.totalDays";
-const currentWeek = "calendarByNameResponse.currentWeek";
-const totalWeeks = "calendarByNameResponse.totalWeeks";
-const calendar = calendarByName.data;
+const calendar = calendarByName.data as Calendar;
 
-const calendarTitle = calendar!.title;
+const currentDay = currentDayFromSemester(calendar);
+const totalDays = totalDaysOfSemester(calendar);
+const currentWeek = currentWeekOfSemester(calendar);
+const totalWeeks = totalWeeksOfSemester(calendar);
+
+const calendarTitle = calendar.title;
 const calendarParts = calendarTitle.split(" ");
 const calendarSeason = calendarParts[0];
 const calendarSemesterWord = calendarParts[1];
