@@ -15,6 +15,6 @@ You can contribute in multiple ways:
 
 - Reporting bugs in the issues tab.
 - Opening pull requets fixing bugs.
-- Opening pull requests adding new semesters the `calendars/` folder.
+- Opening pull requests adding new semesters the `src/content/calendars/` folder.
   - The academic calendar we depend on is found here: https://yu.edu.sa/resources/academic-calendar/
   - We save a copy of the latest calendar as PDF in the repository under `resources/`
