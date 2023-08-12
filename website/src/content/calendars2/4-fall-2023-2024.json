@@ -1,0 +1,194 @@
+{
+  "title": "Fall Semester (2023-2024)",
+  "events": [
+    {
+      "name": "Pre-Registration",
+      "day": "Sunday-Saturday",
+      "start_date": "Aug 13, 2023",
+      "end_date": "Aug 19, 2023",
+      "week": ""
+    },
+    {
+      "name": "First day of Fall Academic classes (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Aug 20, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "First day of INTERLINK classes (Quarter 1, Semester 1) (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Aug 20, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Course Registration. (Without late fees)",
+      "day": "Sunday-Saturday",
+      "start_date": "Aug 20, 2023",
+      "end_date": "Aug 26, 2023",
+      "week": ""
+    },
+    {
+      "name": "(Add and Delete) modifying schedules. (Without late fees)",
+      "day": "Sunday-Saturday",
+      "start_date": "Aug 20, 2023",
+      "end_date": "Aug 26, 2023",
+      "week": ""
+    },
+    {
+      "name": "Course Registration. (With late fees)",
+      "day": "Sunday-Thursday",
+      "start_date": "Aug 27, 2023",
+      "end_date": "Aug 31, 2023",
+      "week": ""
+    },
+    {
+      "name": "(Add and Delete) modifying schedules. (Without late fees)",
+      "day": "Sunday-Thursday",
+      "start_date": "Aug 27, 2023",
+      "end_date": "Aug 31, 2023",
+      "week": ""
+    },
+    {
+      "name": "Specialization and Change Major",
+      "day": "Sunday-Thursday",
+      "start_date": "Aug 13, 2023",
+      "end_date": "Aug 31, 2023",
+      "week": ""
+    },
+    {
+      "name": "Saudi Arabian National day Holiday (1 Day)",
+      "day": "Sunday",
+      "start_date": "Sep 24, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Long Week End Holiday (2 Days)",
+      "day": "Sunday-Monday",
+      "start_date": "Oct 16, 2023",
+      "end_date": "Oct 17, 2023",
+      "week": ""
+    },
+    {
+      "name": "Last day of INTERLINK classes (Quarter 1, Semester 1)",
+      "day": "Thursday",
+      "start_date": "Oct 12, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Registration for INTERLINK classes (Quarter 2, Semester 1)",
+      "day": "Friday-Tuesday",
+      "start_date": "Oct 13, 2023",
+      "end_date": "Oct 17, 2023",
+      "week": ""
+    },
+    {
+      "name": "First day of INTERLINK classes (Quarter 2, Semester 1) (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Oct 15, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Long Week End Holiday (1 Day)",
+      "day": "Thursday",
+      "start_date": "Nov 2, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Mid First Semester Break begins by the end of Thursday",
+      "day": "Thursday-Saturday",
+      "start_date": "Nov 16, 2023",
+      "end_date": "Nov 25, 2023",
+      "week": ""
+    },
+    {
+      "name": "Classes resume after Mid First Semester Break",
+      "day": "Sunday",
+      "start_date": "Nov 26, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Drop Courses (with Grade w)",
+      "day": "Sunday-Sunday",
+      "start_date": "Sep 3, 2023",
+      "end_date": "Nov 12, 2023",
+      "week": ""
+    },
+    {
+      "name": "Semester Withdrawal (Apology). (If the student registered courses)",
+      "day": "Sunday-Sunday",
+      "start_date": "Sep 3, 2023",
+      "end_date": "Nov 26, 2023",
+      "week": ""
+    },
+    {
+      "name": "Semester Postpone. (If the student did not register courses)",
+      "day": "Sunday-Sunday",
+      "start_date": "Aug 13, 2023",
+      "end_date": "Nov 26, 2023",
+      "week": ""
+    },
+    {
+      "name": "Deadline for DN removal requests",
+      "day": "Sunday",
+      "start_date": "Nov 26, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "End of Fall Academic classes",
+      "day": "Thursday",
+      "start_date": "Dec 7, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Final Exams (For General courses) (5 Days)",
+      "day": "Sunday-Thursday",
+      "start_date": "Dec 10, 2023",
+      "end_date": "Dec 14, 2023",
+      "week": ""
+    },
+    {
+      "name": "Last day of INTERLINK classes (Quarter 2, Semester 1)",
+      "day": "Thursday",
+      "start_date": "Dec 14, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Long Week End Holiday (1 Day)",
+      "day": "Sunday",
+      "start_date": "Dec 17, 2023",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Final Exams (For Academic courses) (15 Days)",
+      "day": "Monday-Wednesday",
+      "start_date": "Dec 18, 2023",
+      "end_date": "Jan 3, 2024",
+      "week": ""
+    },
+    {
+      "name": "Deadline for Grades Submission",
+      "day": "Thursday",
+      "start_date": "Jan 4, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Mid-Year Break begins by the end of Thursday",
+      "day": "Thursday-Saturday",
+      "start_date": "Jan 4, 2024",
+      "end_date": "Jan 13, 2024",
+      "week": ""
+    }
+  ]
+}

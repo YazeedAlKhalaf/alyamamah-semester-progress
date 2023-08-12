@@ -1,25 +1,25 @@
 ---
 import CalendarEventsListWithSearch from "../../components/CalendarEventsListWithSearch.svelte";
 import Layout from "../../layouts/Layout.astro";
-import type { CalendarByNameResponse } from "../../models/CalendarByNameResponse";
+import { getCollection } from "astro:content";
 
-const semesterName = Astro.params.name;
+const semesterId = Astro.params.id;
 
-const allCalendarsUrl = `${
-  import.meta.env.API
-}/calendar-by-name?name=${semesterName}`;
-const calendarResponse = await fetch(allCalendarsUrl);
-if (calendarResponse.status !== 200) {
+const calendars = await getCollection("calendars2");
+const calendarByName = calendars.find((entry) => entry.id === semesterId);
+if (calendarByName === undefined) {
   return Astro.redirect("/404");
 }
-const calendarByNameResponse =
-  (await calendarResponse.json()) as CalendarByNameResponse;
 
-const currentDay = calendarByNameResponse.currentDay;
-const totalDays = calendarByNameResponse.totalDays;
-const currentWeek = calendarByNameResponse.currentWeek;
-const totalWeeks = calendarByNameResponse.totalWeeks;
-const calendar = calendarByNameResponse.calendar;
+// const currentDay = calendarByNameResponse.currentDay;
+// const totalDays = calendarByNameResponse.totalDays;
+// const currentWeek = calendarByNameResponse.currentWeek;
+// const totalWeeks = calendarByNameResponse.totalWeeks;
+const currentDay = "calendarByNameResponse.currentDay";
+const totalDays = "calendarByNameResponse.totalDays";
+const currentWeek = "calendarByNameResponse.currentWeek";
+const totalWeeks = "calendarByNameResponse.totalWeeks";
+const calendar = calendarByName.data;
 
 const calendarTitle = calendar!.title;
 const calendarParts = calendarTitle.split(" ");

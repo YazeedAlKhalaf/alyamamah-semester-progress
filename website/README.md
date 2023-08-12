@@ -1,5 +1,5 @@
 # website
 
-## Get Started
+The `src/content/calendars/` is a symbolic link to the `/calendars`.
 
-Copy the `.env.example` to `.env` and fill out the values for the app to work.
+I do use `pnpm`
