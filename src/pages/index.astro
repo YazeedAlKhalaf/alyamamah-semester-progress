@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { getCollection } from "astro:content";
+import { Calendar, isCurrentDayInSemester } from "../models/Calendar";
 
 const calendars = await getCollection("calendars");
 ---
@@ -18,8 +19,8 @@ const calendars = await getCollection("calendars");
     <ul role="list" class="link-card-grid">
       {
         calendars.reverse().map((calendar) => {
-          const data = calendar.data;
-          const isCurrent = data.events.length === 0;
+          const data = calendar.data as Calendar;
+          const isCurrent = isCurrentDayInSemester(data);
 
           return (
             <Fragment>
