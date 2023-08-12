@@ -3,7 +3,8 @@
 
 # Al Yamamah Semester Progress
 
-This project shows the calendar for each semester in the university since I joined.
+- This project shows the calendar for each semester in the university since I joined.
+- I do use `pnpm`.
 
 > [!NOTE]
 > I didn't change the name since I want to keep its legacy.
