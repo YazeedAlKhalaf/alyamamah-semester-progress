@@ -18,7 +18,7 @@ const calendars = await getCollection("calendars");
     </p>
     <ul role="list" class="link-card-grid">
       {
-        calendars.reverse().map((calendar) => {
+        calendars.map((calendar) => {
           const data = calendar.data as Calendar;
           const isCurrent = isCurrentDayInSemester(data);
 
