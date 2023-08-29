@@ -2,9 +2,12 @@ import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 import partytown from "@astrojs/partytown";
 import compress from "astro-compress";
+import netlify from "@astrojs/netlify/edge-functions";
 
 // https://astro.build/config
 export default defineConfig({
+  output: "server",
+  adapter: netlify(),
   vite: {
     ssr: {
       external: ["svgo"],

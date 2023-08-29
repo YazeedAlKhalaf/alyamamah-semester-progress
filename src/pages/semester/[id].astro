@@ -3,20 +3,10 @@ import CalendarEventsListWithSearch from "../../components/CalendarEventsListWit
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { currentDayFromSemester } from "../../models/Calendar";
-import { Calendar } from "../../models/Calendar";
+import type { Calendar } from "../../models/Calendar";
 import { totalDaysOfSemester } from "../../models/Calendar";
 import { totalWeeksOfSemester } from "../../models/Calendar";
 import { currentWeekOfSemester } from "../../models/Calendar";
-
-export const getStaticPaths = async () => {
-  const calendars = await getCollection("calendars");
-
-  return calendars.map((calendar) => {
-    return {
-      params: { id: calendar.id },
-    };
-  });
-};
 
 const semesterId = Astro.params.id;
 
