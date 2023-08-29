@@ -58,10 +58,10 @@ const calendarYear = calendarParts[2];
     </h1>
     <p class="instructions">
       <strong>Semester Progress:</strong>
-      {`${currentDay}/${totalDays}`} days
+      {`${currentDay >= totalDays ? totalDays : currentDay}/${totalDays}`} days
       <br />
       <strong>Week Progress:</strong>
-      {`${currentWeek}/${totalWeeks}`} weeks
+      {`${currentWeek >= totalWeeks ? totalWeeks : currentWeek}/${totalWeeks}`} weeks
     </p>
     <CalendarEventsListWithSearch client:load events={calendar.events} />
   </main>
