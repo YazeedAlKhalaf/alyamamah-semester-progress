@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c69d6bc5-ff38-49d9-bc51-87b2ae9e7368/deploy-status)](https://app.netlify.com/sites/alyamamah-semester-progress/deploys)
+
 > [!IMPORTANT]
 > After Twitter, currently known as X, stopped free access to their API, I decided to end the bot part, the code is still in the history if you want it, but it won't come back unless the price becomes free or someone sponsors the project.
 
