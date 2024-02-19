@@ -1,0 +1,96 @@
+{
+  "title": "Summer Semester (2023-2024)",
+  "events": [
+    {
+      "name": "Pre-Registration",
+      "day": "Sunday-Saturday",
+      "start_date": "Jun 30, 2024",
+      "end_date": "Jul 6, 2024",
+      "week": ""
+    },
+    {
+      "name": "First day of Summer Academic classes (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Jul 7, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "First day of INTERLINK classes (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Jul 7, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Course Registration. (Without late fees)",
+      "day": "Sunday-Tuesday",
+      "start_date": "Jul 7, 2024",
+      "end_date": "Jul 9, 2024",
+      "week": ""
+    },
+    {
+      "name": "Course Registration. (With late fees)",
+      "day": "Wednesday-Thursday",
+      "start_date": "Jul 10, 2024",
+      "end_date": "Jul 11, 2024",
+      "week": ""
+    },
+    {
+      "name": "Change of Major Deadline",
+      "day": "Sunday-Thursday",
+      "start_date": "Jun 30, 2024",
+      "end_date": "Jul 11, 2024",
+      "week": ""
+    },
+    {
+      "name": "Courses Drop (with Grade W)",
+      "day": "Sunday-Thursday",
+      "start_date": "Jul 14, 2024",
+      "end_date": "Jul 25, 2024",
+      "week": ""
+    },
+    {
+      "name": "Semester Withdrawal",
+      "day": "Sunday-Thursday",
+      "start_date": "Jul 14, 2024",
+      "end_date": "Aug 1, 2024",
+      "week": ""
+    },
+    {
+      "name": "Deadline for DN removal requests",
+      "day": "Thursday",
+      "start_date": "Aug 1, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "End of Summer Academic classes",
+      "day": "Thursday",
+      "start_date": "Aug 8, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Last day of INTERLINK classes",
+      "day": "Thursday",
+      "start_date": "Aug 8, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Final Exams (4 Days)",
+      "day": "Saturday-Wednesday",
+      "start_date": "Aug 10, 2024",
+      "end_date": "Aug 14, 2024",
+      "week": ""
+    },
+    {
+      "name": "Deadline for Grades Submission",
+      "day": "Thursday",
+      "start_date": "Aug 15, 2024",
+      "end_date": null,
+      "week": ""
+    }
+  ]
+}
