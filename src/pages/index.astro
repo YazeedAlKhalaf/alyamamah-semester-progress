@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { getCollection } from "astro:content";
-import { Calendar, isCurrentDayInSemester } from "../models/Calendar";
+import { type Calendar, isCurrentDayInSemester } from "../models/Calendar";
 
 const calendars = await getCollection("calendars");
 ---
