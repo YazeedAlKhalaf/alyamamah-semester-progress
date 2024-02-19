@@ -20,3 +20,4 @@ You can contribute in multiple ways:
 - Opening pull requests adding new semesters the `src/content/calendars/` folder.
   - The academic calendar we depend on is found here: https://yu.edu.sa/resources/academic-calendar/
   - We save a copy of the latest calendar as PDF in the repository under `resources/`
+  - Then usually I use ChatGPT with GPT-4 to get the JSON done easily, first it started was with schedule 5, before it was manually.
