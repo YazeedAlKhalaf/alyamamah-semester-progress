@@ -3,7 +3,7 @@
   "events": [
     {
       "name": "Pre-Registration",
-      "day": "Sunday to Saturday",
+      "day": "Sunday-Saturday",
       "start_date": "Jan 7, 2024",
       "end_date": "Jan 13, 2024",
       "week": ""
@@ -24,21 +24,21 @@
     },
     {
       "name": "Course Registration. (Without late fees)",
-      "day": "Sunday to Saturday",
+      "day": "Sunday-Saturday",
       "start_date": "Jan 14, 2024",
       "end_date": "Jan 20, 2024",
       "week": ""
     },
     {
       "name": "Course Registration. (With late fees)",
-      "day": "Sunday to Thursday",
+      "day": "Sunday-Thursday",
       "start_date": "Jan 21, 2024",
       "end_date": "Jan 25, 2024",
       "week": ""
     },
     {
       "name": "Change of Major Deadline",
-      "day": "Sunday to Thursday",
+      "day": "Sunday-Thursday",
       "start_date": "Jan 7, 2024",
       "end_date": "Jan 25, 2024",
       "week": ""
@@ -59,7 +59,7 @@
     },
     {
       "name": "Mid second semester break",
-      "day": "Thursday to Saturday",
+      "day": "Thursday-Saturday",
       "start_date": "Feb 22, 2024",
       "end_date": "Mar 2, 2024",
       "week": ""
@@ -80,7 +80,7 @@
     },
     {
       "name": "Registration for INTERLINK classes (Quarter 2, Semester 2)",
-      "day": "Friday to Tuesday",
+      "day": "Friday-Tuesday",
       "start_date": "Mar 15, 2024",
       "end_date": "Mar 19, 2024",
       "week": ""
@@ -94,7 +94,7 @@
     },
     {
       "name": "Eid Al Fitr Break by the end of Thursday",
-      "day": "Thursday to Sunday",
+      "day": "Thursday-Sunday",
       "start_date": "Apr 28, 2024",
       "end_date": "May 12, 2024",
       "week": ""
@@ -115,14 +115,14 @@
     },
     {
       "name": "Courses Drop (with Grade W)",
-      "day": "Sunday to Sunday",
+      "day": "Sunday-Sunday",
       "start_date": "Jan 28, 2024",
       "end_date": "Apr 21, 2024",
       "week": ""
     },
     {
       "name": "Semester Withdrawal",
-      "day": "Sunday to Sunday",
+      "day": "Sunday-Sunday",
       "start_date": "Jan 28, 2024",
       "end_date": "May 5, 2024",
       "week": ""
@@ -150,7 +150,7 @@
     },
     {
       "name": "Final Exams (For General courses) (4 Days)",
-      "day": "Sunday to Wednesday",
+      "day": "Sunday-Wednesday",
       "start_date": "May 19, 2024",
       "end_date": "May 22, 2024",
       "week": ""
@@ -164,7 +164,7 @@
     },
     {
       "name": "Final Exams (For Academic courses) (15 Days)",
-      "day": "Thursday to Wednesday",
+      "day": "Thursday-Wednesday",
       "start_date": "May 23, 2024",
       "end_date": "Jun 12, 2024",
       "week": ""

@@ -5,6 +5,12 @@ import { getCollection } from "astro:content";
 import { type Calendar, isCurrentDayInSemester } from "../models/Calendar";
 
 const calendars = await getCollection("calendars");
+
+// Assuming each calendar has a 'startDate' that's a string in ISO format (YYYY-MM-DD)
+// Sort the calendars by 'startDate' in descending order (latest first)
+const sortedCalendars = calendars.sort((a, b) => {
+  return parseInt(b.id.charAt(0)) - parseInt(a.id.charAt(0));
+});
 ---
 
 <Layout title="Al Yamamah Semester Progress">
@@ -18,7 +24,7 @@ const calendars = await getCollection("calendars");
     </p>
     <ul role="list" class="link-card-grid">
       {
-        calendars.reverse().map((calendar) => {
+        sortedCalendars.map((calendar) => {
           const data = calendar.data as Calendar;
           const isCurrent = isCurrentDayInSemester(data);
 
