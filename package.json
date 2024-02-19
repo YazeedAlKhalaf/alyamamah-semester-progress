@@ -11,12 +11,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "2.6.0",
-    "@astrojs/partytown": "1.2.3",
-    "@astrojs/svelte": "3.1.0",
-    "astro": "2.10.7",
-    "astro-compress": "2.0.5",
-    "date-fns": "2.30.0",
-    "svelte": "4.2.0"
+    "@astrojs/netlify": "5.1.2",
+    "@astrojs/partytown": "2.0.4",
+    "@astrojs/svelte": "5.0.3",
+    "astro": "4.4.0",
+    "astro-compress": "2.2.10",
+    "date-fns": "3.3.1",
+    "svelte": "4.2.11"
   }
 }
