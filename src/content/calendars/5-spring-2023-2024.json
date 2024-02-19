@@ -1,0 +1,187 @@
+{
+  "title": "Spring Semester (2023-2024)",
+  "events": [
+    {
+      "name": "Pre-Registration",
+      "day": "Sunday to Saturday",
+      "start_date": "Jan 7, 2024",
+      "end_date": "Jan 13, 2024",
+      "week": ""
+    },
+    {
+      "name": "First day of Spring Academic classes",
+      "day": "Sunday",
+      "start_date": "Jan 14, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "First day of INTERLINK classes (Quarter 1, semester 2) (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Jan 14, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Course Registration. (Without late fees)",
+      "day": "Sunday to Saturday",
+      "start_date": "Jan 14, 2024",
+      "end_date": "Jan 20, 2024",
+      "week": ""
+    },
+    {
+      "name": "Course Registration. (With late fees)",
+      "day": "Sunday to Thursday",
+      "start_date": "Jan 21, 2024",
+      "end_date": "Jan 25, 2024",
+      "week": ""
+    },
+    {
+      "name": "Change of Major Deadline",
+      "day": "Sunday to Thursday",
+      "start_date": "Jan 7, 2024",
+      "end_date": "Jan 25, 2024",
+      "week": ""
+    },
+    {
+      "name": "Long Weekend Holiday (1 Day)",
+      "day": "Sunday",
+      "start_date": "Jan 28, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Foundation day Holiday (1 Day)",
+      "day": "Thursday",
+      "start_date": "Feb 22, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Mid second semester break",
+      "day": "Thursday to Saturday",
+      "start_date": "Feb 22, 2024",
+      "end_date": "Mar 2, 2024",
+      "week": ""
+    },
+    {
+      "name": "Classes resume after Mid Second Semester Break",
+      "day": "Sunday",
+      "start_date": "Mar 3, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Last day of INTERLINK classes (Quarter 1, Semester 2)",
+      "day": "Thursday",
+      "start_date": "Mar 14, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Registration for INTERLINK classes (Quarter 2, Semester 2)",
+      "day": "Friday to Tuesday",
+      "start_date": "Mar 15, 2024",
+      "end_date": "Mar 19, 2024",
+      "week": ""
+    },
+    {
+      "name": "First day of INTERLINK classes (Quarter 2, Semester 2) (Attendance taken)",
+      "day": "Sunday",
+      "start_date": "Mar 17, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Eid Al Fitr Break by the end of Thursday",
+      "day": "Thursday to Sunday",
+      "start_date": "Apr 28, 2024",
+      "end_date": "May 12, 2024",
+      "week": ""
+    },
+    {
+      "name": "Classes resume After Eid Al Fitr Break",
+      "day": "Monday",
+      "start_date": "May 13, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Long Weekend Holiday (1 Day)",
+      "day": "Thursday",
+      "start_date": "May 2, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Courses Drop (with Grade W)",
+      "day": "Sunday to Sunday",
+      "start_date": "Jan 28, 2024",
+      "end_date": "Apr 21, 2024",
+      "week": ""
+    },
+    {
+      "name": "Semester Withdrawal",
+      "day": "Sunday to Sunday",
+      "start_date": "Jan 28, 2024",
+      "end_date": "May 5, 2024",
+      "week": ""
+    },
+    {
+      "name": "Semester Postponement",
+      "day": "Sunday",
+      "start_date": "Jan 7, 2024",
+      "end_date": "May 5, 2024",
+      "week": ""
+    },
+    {
+      "name": "Deadline for DN removal requests",
+      "day": "Thursday",
+      "start_date": "May 16, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "End of Spring Academic classes",
+      "day": "Wednesday",
+      "start_date": "May 15, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Final Exams (For General courses) (4 Days)",
+      "day": "Sunday to Wednesday",
+      "start_date": "May 19, 2024",
+      "end_date": "May 22, 2024",
+      "week": ""
+    },
+    {
+      "name": "Last day of INTERLINK classes (Quarter 2, Semester 2)",
+      "day": "Wednesday",
+      "start_date": "Jun 5, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "Final Exams (For Academic courses) (15 Days)",
+      "day": "Thursday to Wednesday",
+      "start_date": "May 23, 2024",
+      "end_date": "Jun 12, 2024",
+      "week": ""
+    },
+    {
+      "name": "Deadline for Grades Submission",
+      "day": "Monday",
+      "start_date": "Jun 10, 2024",
+      "end_date": null,
+      "week": ""
+    },
+    {
+      "name": "End-year break begins by the end of Monday",
+      "day": "Monday",
+      "start_date": "Jun 10, 2024",
+      "end_date": null,
+      "week": ""
+    }
+  ]
+}
